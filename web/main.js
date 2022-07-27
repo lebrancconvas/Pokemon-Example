@@ -18,7 +18,6 @@ getPokemon().then(pokemons => {
   pokemons.map(pokemon => {
     let pokemonElement = `<div id="pokemon-card"><div id="pokemon-thumbnail"><img src="${pokemon.ThumbnailImage}" alt="${pokemon.name}" /></div><div id="pokemon-details"><div id="pokemon-name">${pokemon.name}</div><div id="pokemon-type">${pokemon.type}</div></div></div>\n`;
     pokemonSection.insertAdjacentHTML('beforeend', pokemonElement);
-    console.log(`${pokemonElement}`); // Debugging. 
   })
 }).catch(err => {
   console.error(err);

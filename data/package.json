@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "json-server --watch pokemon.json --port 9000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

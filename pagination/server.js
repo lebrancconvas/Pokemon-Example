@@ -2,6 +2,10 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 5002;
 
+const cors = require('cors');
+
+app.use(cors());
+
 app.get('/', (req, res) => {
 	res.send("Test Pokemon Server.");
 });
@@ -9,10 +13,9 @@ app.get('/', (req, res) => {
 app.get('/api/v1/pokemons', async(req, res) => {
 	const response = await fetch('http://localhost:9001/pokemons');
 	let data = await response.json();
-	// let newData = [];
 	const record = req.query.record;
 	if(record !== undefined) {
-		data = data.filter((pokemon, index) => index < record) 
+		data = data.filter((_, index) => index < record);
 		res.send(data);
 	} else {
 		res.send(data);

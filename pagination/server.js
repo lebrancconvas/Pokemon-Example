@@ -8,8 +8,15 @@ app.get('/', (req, res) => {
 
 app.get('/api/v1/pokemons', async(req, res) => {
 	const response = await fetch('http://localhost:9001/pokemons');
-	const data = await response.json();
-	res.send(data);
+	let data = await response.json();
+	// let newData = [];
+	const record = req.query.record;
+	if(record !== undefined) {
+		data = data.filter((pokemon, index) => index < record) 
+		res.send(data);
+	} else {
+		res.send(data);
+	}
 })
 
 app.listen(PORT, () => {

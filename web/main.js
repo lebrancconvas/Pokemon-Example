@@ -5,7 +5,7 @@ let pokemonSection = document.getElementById('pokemon');
 const getPokemon = async() => {
   try {
     const record = undefined;
-    const res = await fetch(`http://localhost:5002/api/v1/pokemons`, {headers: {'Content-Type': 'application/json'}});
+    const res = await fetch(`http://localhost:9001/pokemons`, {headers: {'Content-Type': 'application/json'}});
     const data = await res.json();
     return data;
   } catch(err) {

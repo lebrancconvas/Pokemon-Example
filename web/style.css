@@ -5,3 +5,39 @@ body {
 header {
   text-align: center;
 }
+
+#pokemon {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+#pokemon-card {
+  border: 2px solid red;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px pink;
+  width: 95%;
+  margin: 10px 0;
+}
+
+#pokemon-thumbnail {
+  position: relative;
+}
+
+#pokemon-details {
+  display: inline-block;
+  margin: 5px;  
+  font-size: 16px;
+}
+
+#pokemon-name {
+  margin: 2px 0;
+}
+
+#pokemon-type {
+  margin: 5px 0;
+}
+
+img {
+  width: 90%;
+  height: 90%;
+}

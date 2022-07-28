@@ -16,7 +16,25 @@ const getPokemon = async() => {
 
 getPokemon().then(pokemons => {
   pokemons.map(pokemon => {
-    let pokemonElement = `<div id="pokemon-card"><div id="pokemon-thumbnail"><img src="${pokemon.ThumbnailImage}" alt="${pokemon.name}" /></div><div id="pokemon-details"><div id="pokemon-name">${pokemon.name}</div><div id="pokemon-type">${pokemon.type}</div></div></div>\n`;
+    let pokemonElement = `
+      <div id="pokemon-card">
+        <div id="pokemon-thumbnail">
+          <img src="${pokemon.ThumbnailImage}" alt="${pokemon.name}" />
+        </div>
+        <div id="pokemon-details">
+          <div id="pokemon-number">
+            ${pokemon.number} 
+          </div>
+          <div id="pokemon-name">
+            ${pokemon.name} 
+          </div>
+          <div id="pokemon-type">
+            ${pokemon.type}
+          </div>
+        </div>
+      </div>
+    
+    \n`;
     pokemonSection.insertAdjacentHTML('beforeend', pokemonElement);
   })
 }).catch(err => {
